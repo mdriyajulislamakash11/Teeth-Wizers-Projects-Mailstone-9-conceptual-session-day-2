@@ -19,6 +19,7 @@ const router = createBrowserRouter([
       {
         path: "/allTreatments",
         element: <AllTreatments />,
+        loader: () => fetch("/service.json")
       },
       {
         path: "/myProfile",
