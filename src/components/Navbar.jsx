@@ -39,7 +39,7 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <Link to="/" className="text-xl ">Teeth Wizerd</Link>
+          <Link to="/" className="text-2xl font-bold">Teeth Wizerd</Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
