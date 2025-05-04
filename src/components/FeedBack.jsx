@@ -47,7 +47,7 @@ const FeedBack = ({ feedBack }) => {
           />
         </div>
 
-        <button className=" bg-[#FFD700] text-[#1F2937] text-black text-xs px-3 py-1 rounded-full font-semibold hover:bg-yellow-300 transition">
+        <button className=" bg-[#FFD700]  text-black text-xs px-3 py-1 rounded-full font-semibold hover:bg-yellow-300 transition">
           Review
         </button>
       </div>

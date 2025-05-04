@@ -6,6 +6,7 @@ import AllTreatments from "../pages/AllTreatments";
 import MyProfile from "../pages/MyProfile";
 import MyAppointments from "../pages/MyAppointments";
 import Details from "../pages/Details";
+import { param } from "framer-motion/client";
 
 const router = createBrowserRouter([
   {
@@ -40,8 +41,16 @@ const router = createBrowserRouter([
       },
       {
         path: "/details/:id",
-        element:<Details />
+        element: <Details />,
+        loader: async ({ params }) => {
+          const res = await fetch("/service.json");
+          const data = await res.json();
+      
+          const singleItem = data.find(item => item.id == params.id);
+          return singleItem;
+        }
       }
+      
     ],
   },
 ]);
