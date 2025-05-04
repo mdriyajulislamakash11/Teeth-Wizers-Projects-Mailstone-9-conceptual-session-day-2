@@ -16,26 +16,32 @@ const Googleprovider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true)
 
   const createUser = (email, password) => {
+    setLoading(true)
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   const loginUser = (email, password) => {
+    setLoading(true)
     return signInWithEmailAndPassword(auth, email, password);
   };
 
   const loginWithGoogle = () => {
+    setLoading(true)
     return signInWithPopup(auth, Googleprovider);
   };
 
   const handleProfileUbdate = (name, image) => {
+    setLoading(true)
     updateProfile(auth.currentUser, {
       displayName: name, photoURL: image
     })
   }
 
   const logOut = () => {
+    setLoading(true)
     return signOut(auth);
   };
 
@@ -43,12 +49,14 @@ const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       console.log("Current user:", currentUser);
       setUser(currentUser);
+      setLoading(false)
     });
 
     return () => unsubscribe();
   }, []);
 
   const authInfo = {
+    loading,
     user,
     createUser,
     loginUser,
