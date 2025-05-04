@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../auth/AuthProvider";
 
 const Register = () => {
@@ -75,7 +75,12 @@ const Register = () => {
         <button type="submit" className="btn btn-primary w-full">
           Register
         </button>
-
+        <p className="mt-2">
+          please go to the ?{" "}
+          <Link to="/login">
+            <span className="text-blue-600 font-bold">Login</span>
+          </Link>
+        </p>
         <div className="divider">OR</div>
 
         <button

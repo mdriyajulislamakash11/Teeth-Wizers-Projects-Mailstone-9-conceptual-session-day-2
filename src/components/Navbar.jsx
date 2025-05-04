@@ -13,12 +13,17 @@ const Navbar = () => {
       <li>
         <NavLink to="/allTreatments">All Treatments</NavLink>{" "}
       </li>
-      <li>
-        <NavLink to="/myProfile">My Profile</NavLink>{" "}
-      </li>
-      <li>
-        <NavLink to="/myAppointments">My Appointments</NavLink>{" "}
-      </li>
+      {user && (
+        <li>
+          <NavLink to="/myProfile">My Profile</NavLink>{" "}
+        </li>
+      )}
+
+      {user && (
+        <li>
+          <NavLink to="/myAppointments">My Appointments</NavLink>{" "}
+        </li>
+      )}
     </>
   );
 
@@ -60,9 +65,11 @@ const Navbar = () => {
         <div className="navbar-end">
           <img src="" alt="" />
           {user ? (
-            <button onClick={logOut} className="btn">LogOut</button>
+            <button onClick={logOut} className="border-2 px-4 py-2 rounded-lg">
+              LogOut
+            </button>
           ) : (
-            <Link to="/login" className="btn">
+            <Link to="/login" className="border-2 px-6 py-2 rounded-lg">
               Login
             </Link>
           )}
