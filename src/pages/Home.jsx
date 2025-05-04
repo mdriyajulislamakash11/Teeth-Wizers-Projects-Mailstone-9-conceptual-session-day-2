@@ -25,7 +25,7 @@ const Home = () => {
           <ServiceCard key={service.id} service={service} />
         ))}
       </div>
-      <button className="block mx-auto btn btn-warning my-8">
+      <button className="bg-[#FFD700] text-[#1F2937] block mx-auto btn btn-warning my-8">
         <Link to="/allTreatments">Show More</Link>
       </button>
 

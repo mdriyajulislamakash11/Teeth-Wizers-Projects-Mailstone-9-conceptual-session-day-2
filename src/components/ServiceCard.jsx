@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { NavLink } from "react-router-dom";
 
 const ServiceCard = ({ service }) => {
   const words = service.description.split(" ");
@@ -46,7 +47,7 @@ const ServiceCard = ({ service }) => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
-            Book Now
+            <NavLink to={`/datails/${service.id}`}>Book Now</NavLink>
           </motion.button>
         </div>
       </div>
