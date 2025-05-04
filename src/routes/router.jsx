@@ -6,7 +6,8 @@ import AllTreatments from "../pages/AllTreatments";
 import MyProfile from "../pages/MyProfile";
 import MyAppointments from "../pages/MyAppointments";
 import Details from "../pages/Details";
-import { param } from "framer-motion/client";
+import Register from "../components/Register";
+import Login from "../components/Login";
 
 const router = createBrowserRouter([
   {
@@ -49,7 +50,15 @@ const router = createBrowserRouter([
           const singleItem = data.find(item => item.id == params.id);
           return singleItem;
         }
-      }
+      },
+      {
+        path: "/register",
+        element: <Register />
+      },
+      {
+        path: "/login",
+        element: <Login />
+      },
       
     ],
   },

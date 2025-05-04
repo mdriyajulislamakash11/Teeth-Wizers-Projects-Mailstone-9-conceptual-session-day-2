@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../auth/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
   const links = (
     <>
-      <li><NavLink to="/">Home</NavLink> </li>
-      <li><NavLink to="/allTreatments">All Treatments</NavLink> </li>
-      <li><NavLink to="/myProfile">My Profile</NavLink> </li>
-      <li><NavLink to="/myAppointments">My Appointments</NavLink> </li>
+      <li>
+        <NavLink to="/">Home</NavLink>{" "}
+      </li>
+      <li>
+        <NavLink to="/allTreatments">All Treatments</NavLink>{" "}
+      </li>
+      <li>
+        <NavLink to="/myProfile">My Profile</NavLink>{" "}
+      </li>
+      <li>
+        <NavLink to="/myAppointments">My Appointments</NavLink>{" "}
+      </li>
     </>
   );
 
@@ -39,14 +50,22 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <Link to="/" className="text-2xl font-bold">Teeth Wizerd</Link>
+          <Link to="/" className="text-2xl font-bold">
+            Teeth Wizerd
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end">
-            <img src="" alt="" />
-          <Link className="btn">Login</Link>
+          <img src="" alt="" />
+          {user ? (
+            <button onClick={logOut} className="btn">LogOut</button>
+          ) : (
+            <Link to="/login" className="btn">
+              Login
+            </Link>
+          )}
         </div>
       </div>
     </div>
