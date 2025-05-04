@@ -11,7 +11,7 @@ const Banner = () => {
           "url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp)",
       }}
     >
-      <div className="hero-overlay bg-black/80 backdrop-blur-sm"></div>
+      <div className="hero-overlay bg-black/50 backdrop-blur-sm"></div>
       <div className="hero-content text-center text-white z-10 px-4">
         <motion.div
           className="max-w-3xl mx-auto p-8 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-xl"
