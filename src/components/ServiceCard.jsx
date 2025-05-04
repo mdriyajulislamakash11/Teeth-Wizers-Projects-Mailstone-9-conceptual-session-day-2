@@ -47,7 +47,7 @@ const ServiceCard = ({ service }) => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
-            <NavLink to={`/datails/${service.id}`}>Book Now</NavLink>
+            <NavLink to={`/details/${service.id}`}>Book Now</NavLink>
           </motion.button>
         </div>
       </div>
