@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../auth/AuthProvider";
 
 const Register = () => {
-  const { createUser, loginWithGoogle } = useContext(AuthContext);
+  const { createUser, loginWithGoogle, handleProfileUbdate } = useContext(AuthContext);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
@@ -29,6 +29,7 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         console.log("User created:", result.user);
+        handleProfileUbdate(name, photo)
         form.reset();
         navigate("/");
       })
