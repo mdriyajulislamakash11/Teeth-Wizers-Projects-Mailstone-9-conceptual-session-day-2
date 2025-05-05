@@ -55,7 +55,7 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <Link to="/" className="text-2xl font-bold">
+          <Link to="/" className="text-xl md:text-2xl font-bold">
             Teeth Wizerd
           </Link>
         </div>
